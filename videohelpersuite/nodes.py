@@ -281,8 +281,6 @@ class VideoCombine:
             if pingpong:
                 images = to_pingpong(images)
             frames = map(lambda x : Image.fromarray(tensor_to_bytes(x)), images)
-            print("JAJAJAAJ")
-            print(frames)
             # Use pillow directly to save an animated image
             next(frames).save(
                 file_path,
@@ -362,6 +360,8 @@ class VideoCombine:
                 if meta_batch is not None:
                     meta_batch.outputs[unique_id] = (counter, output_process)
 
+            print("JAJAJAAJ")
+            print(images)
             for image in images:
                 output_process.send(image.tobytes())
             if meta_batch is not None:
