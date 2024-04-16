@@ -362,7 +362,6 @@ class VideoCombine:
 
             for image in images:
                 output_process.send(image.tobytes())
-                print("SAKETH")
             if meta_batch is not None:
                 requeue_workflow((meta_batch.unique_id, not meta_batch.has_closed_inputs))
             if meta_batch is None or meta_batch.has_closed_inputs:
@@ -398,6 +397,8 @@ class VideoCombine:
                 #TODO: Evaluate a more consistent solution for this
                 format = "image/gif"
                 output_files.append(gif_output_path)
+                print(gif_output)
+                print("ADITAY")
                 file = gif_output
 
             elif audio is not None and audio() is not False:
