@@ -281,6 +281,8 @@ class VideoCombine:
             if pingpong:
                 images = to_pingpong(images)
             frames = map(lambda x : Image.fromarray(tensor_to_bytes(x)), images)
+            print("JAJAJAAJ")
+            print(frames)
             # Use pillow directly to save an animated image
             next(frames).save(
                 file_path,
