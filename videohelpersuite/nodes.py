@@ -360,10 +360,9 @@ class VideoCombine:
                 if meta_batch is not None:
                     meta_batch.outputs[unique_id] = (counter, output_process)
 
-            print("JAJAJAAJ")
-            print(images)
             for image in images:
                 output_process.send(image.tobytes())
+                print("SAKETH")
             if meta_batch is not None:
                 requeue_workflow((meta_batch.unique_id, not meta_batch.has_closed_inputs))
             if meta_batch is None or meta_batch.has_closed_inputs:
