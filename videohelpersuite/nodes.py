@@ -380,7 +380,8 @@ class VideoCombine:
                 return {"ui": {"unfinished_batch": [True]}, "result": ((save_output, []),)}
 
             output_files.append(file_path)
-
+            
+            print("MAHI")
             if "gifski_pass" in video_format:
                 gif_output = f"{filename}_{counter:05}.gif"
                 gif_output_path = os.path.join( full_output_folder, gif_output)
