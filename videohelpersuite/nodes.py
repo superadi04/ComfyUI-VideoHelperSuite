@@ -355,8 +355,6 @@ class VideoCombine:
 
             if output_process is None:
                 output_process = ffmpeg_process(args, video_format, video_metadata, file_path, env)
-                print("ANJANI")
-                print(output_process)
                 #Proceed to first yield
                 output_process.send(None)
                 if meta_batch is not None:
@@ -380,8 +378,12 @@ class VideoCombine:
                 #batch is unfinished
                 #TODO: Check if empty output breaks other custom nodes
                 return {"ui": {"unfinished_batch": [True]}, "result": ((save_output, []),)}
+            
+
 
             output_files.append(file_path)
+            print(output_files)
+            print("ANJANI")
             
             if "gifski_pass" in video_format:
                 gif_output = f"{filename}_{counter:05}.gif"
