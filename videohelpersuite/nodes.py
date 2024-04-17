@@ -355,6 +355,8 @@ class VideoCombine:
 
             if output_process is None:
                 output_process = ffmpeg_process(args, video_format, video_metadata, file_path, env)
+                print("ANJANI")
+                print(output_process)
                 #Proceed to first yield
                 output_process.send(None)
                 if meta_batch is not None:
@@ -381,7 +383,6 @@ class VideoCombine:
 
             output_files.append(file_path)
             
-            print("MAHI")
             if "gifski_pass" in video_format:
                 gif_output = f"{filename}_{counter:05}.gif"
                 gif_output_path = os.path.join( full_output_folder, gif_output)
@@ -398,8 +399,6 @@ class VideoCombine:
                 #TODO: Evaluate a more consistent solution for this
                 format = "image/gif"
                 output_files.append(gif_output_path)
-                print(gif_output)
-                print("ADITAY")
                 file = gif_output
 
             elif audio is not None and audio() is not False:
